@@ -84,7 +84,9 @@ body {
 
 a:focus-visible,
 button:focus-visible,
-input:focus-visible {
+input[type=button]:focus-visible,
+input[type=submit]:focus-visible,
+[role=button]:focus-visible {
   outline: 1px solid rgb(126, 126, 126);
 }
 
@@ -163,7 +165,7 @@ input:focus-visible {
 .header__button .button__link:active {
   border: 2px inset #EC5863;
 }
-.header__button .button__link:hover {
+.header__button .button__link:hover, .header__button .button__link:focus-visible {
   opacity: 1;
   background-color: rgba(66, 134, 244, 0.9);
 }
@@ -209,7 +211,7 @@ input:focus-visible {
 .menu__link {
   color: #000;
 }
-.menu__link:hover {
+.menu__link:hover, .menu__link:focus-visible {
   display: inline-block;
   opacity: 0.5;
 }
@@ -235,7 +237,7 @@ input:focus-visible {
   border-radius: 5px;
   transition: opacity 0.1s;
 }
-.button__link:hover {
+.button__link:hover, .button__link:focus-visible {
   opacity: 0.8;
   transition: 0.1s ease-in;
 }
@@ -714,15 +716,21 @@ input:focus-visible {
   max-width: 406px;
   justify-content: space-between;
 }
-.footer__container a {
-  display: inline-block;
-  max-width: 161px;
-}
 @media (max-width: 390px) {
   .footer__container {
     flex-direction: column;
   }
-  .footer__container a {
+}
+.footer__link {
+  display: inline-block;
+  max-width: 161px;
+  transition: opacity 0.1s;
+}
+.footer__link:hover, .footer__link:focus-visible {
+  opacity: 0.85;
+}
+@media (max-width: 390px) {
+  .footer__link {
     margin: 10px auto;
   }
 }

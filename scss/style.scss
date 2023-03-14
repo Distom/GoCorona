@@ -94,7 +94,8 @@ input[type=submit]:focus-visible,
 				border: 2px inset #EC5863;
 			}
 
-			&:hover {
+			&:hover,
+			&:focus-visible {
 				opacity: 1;
 				background-color: rgba(66, 134, 244, 0.9);
 			}
@@ -147,7 +148,8 @@ input[type=submit]:focus-visible,
 	&__link {
 		color: #000;
 
-		&:hover {
+		&:hover,
+		&:focus-visible {
 			display: inline-block;
 			opacity: 0.5;
 		}
@@ -176,7 +178,8 @@ input[type=submit]:focus-visible,
 		border-radius: 5px;
 		transition: opacity 0.1s;
 
-		&:hover {
+		&:hover,
+		&:focus-visible {
 			opacity: 0.8;
 			transition: 0.1s ease-in;
 		}
@@ -730,17 +733,24 @@ input[type=submit]:focus-visible,
 		max-width: 406px;
 		justify-content: space-between;
 
-		a {
-			display: inline-block;
-			max-width: 161px;
+		@media (max-width: 390px) {
+			flex-direction: column;
+		}
+	}
+
+	&__link {
+		display: inline-block;
+		max-width: 161px;
+		transition: opacity 0.1s;
+
+		&:hover,
+		&:focus-visible {
+			opacity: 0.85;
 		}
 
 		@media (max-width: 390px) {
-			flex-direction: column;
-
-			a {
-				margin: 10px auto;
-			}
+			margin: 10px auto;
 		}
 	}
+
 }

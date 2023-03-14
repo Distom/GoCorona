@@ -80,6 +80,7 @@ body {
   letter-spacing: 0.08em;
   color: #616161;
   line-height: 138.5%;
+  background-color: #FFFFFF;
 }
 
 a:focus-visible,
@@ -252,9 +253,6 @@ input[type=submit]:focus-visible,
 
 .main {
   flex: 1 1 auto;
-}
-.main > * {
-  background-color: #fff;
 }
 
 .get-started {
